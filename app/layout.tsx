@@ -1,22 +1,22 @@
-import './globals.css';
+import type { Metadata } from "next";
+import { Inter } from "next/font/google";
+import "./globals.css";
 
-import { Analytics } from '@vercel/analytics/react';
+const inter = Inter({ subsets: ["latin"] });
 
-export const metadata = {
-  title: 'Next.js App Router + NextAuth + Tailwind CSS',
-  description:
-    'A user admin dashboard configured with Next.js, Postgres, NextAuth, Tailwind CSS, TypeScript, and Prettier.'
+export const metadata: Metadata = {
+  title: "Object Identifier",
+  description: "Identify objects in images using AI",
 };
 
 export default function RootLayout({
-  children
-}: {
+  children,
+}: Readonly<{
   children: React.ReactNode;
-}) {
+}>) {
   return (
     <html lang="en">
-      <body className="flex min-h-screen w-full flex-col">{children}</body>
-      <Analytics />
+      <body className={inter.className}>{children}</body>
     </html>
   );
 }
